@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import { Button, Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import "./App.css";
 // import bg from "./img/walnut.png";
 // import almond from "./img/almond.jpg";
