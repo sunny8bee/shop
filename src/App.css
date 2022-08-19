@@ -7,41 +7,32 @@
 
   display: block;
   margin: 0px auto;
-}
-
-
-.almond {
-  width: 33.33%;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  background-image: url(./img/almond.jpg);
-}
-
-.cashew {
-  width: 33.33%;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    background-image: url(./img/cashew.jpg);
 
 }
 
-.hodu {
-  width: 33.33%;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    background-image: url(./img/hodu.jpg);
-}
 
-.productDescription{
+img{
+    margin-top: 10px;
+    width: 40vh;
+    height: 500px;
+    /* background-size: cover; */
+    /* background-position: center; */
+    border-radius: 10%;
+ } 
+
+
+
+/* .productDescription{
   color: aliceblue;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color:#282c34;
+  font-size: 40px;
+  font-weight: bold;
 }
 
-
+.price {
+  font-size: 24px;
+  font-weight: bold;} */
 
 
 
@@ -50,39 +41,4 @@
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
