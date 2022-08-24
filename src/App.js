@@ -2,10 +2,9 @@ import logo from "./logo.svg";
 import { useState } from "react";
 import { Navbar, Container, Nav, Row, Col } from "react-bootstrap";
 import "./App.css";
-// import Styled from "./components/Styled";
-// import bg from "./img/walnut.png";
-// import almond from "./img/almond.jpg";
 import data from "./data.js";
+import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import Detail from "./pages/Detail.js";
 
 function App() {
   let [nuts] = useState(data);
@@ -14,37 +13,67 @@ function App() {
     <div className="App">
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Nut's time</Navbar.Brand>
+          <Navbar.Brand href="/">Nut's time</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">nuts상품</Nav.Link>
-            <Nav.Link href="#pricing">장바구니</Nav.Link>
+            <Nav.Link to href="/">
+              Home
+            </Nav.Link>
+            <Nav.Link href="detail">nuts상품</Nav.Link>
+            <Nav.Link href="basket">장바구니</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
 
-      <div
-        className="main-bg"
-        // style={{ backgroundImage: "url(" + bg + ")" }}
-      ></div>
+      {/* <Link to="/">home</Link>
+      <Link to="/detail">상세페이지</Link> */}
 
-      <div className="container">
-        <div className="row">
-          {/* Card 컴포넌트 활용법 */}
-          {/* <Col>
+      <Routes>
+        {/* 📌페이지 = Route */}
+
+        <Route
+          // ✅메인페이지
+          path="/"
+          element={
+            <>
+              <div
+                className="main-bg"
+                // style={{ backgroundImage: "url(" + bg + ")" }}
+              ></div>
+              <div className="container">
+                <div className="row">
+                  {/* Card 컴포넌트 활용법 */}
+                  {/* 
               <Card nuts={nuts[0]} i={1} />
-            </Col>
-            <Col>
               <Card nuts={nuts[1]} i={2} />
-            </Col>
-            <Col>
               <Card nuts={nuts[2]} i={3} />
-            </Col> */}
-          {nuts.map((a, i) => {
-            return <Card nuts={nuts[i]} i={i}></Card>;
-          })}
-        </div>
-      </div>
+               */}
+
+                  {/* map 반복문쓰기 */}
+                  {nuts.map((a, i) => {
+                    return <Card nuts={nuts[i]} i={i}></Card>;
+                  })}
+                </div>
+              </div>
+            </>
+          }
+        />
+
+        <Route
+          //✅상세페이지 = 상품페이지
+          path="/detail"
+          element={<Detail />}
+        />
+
+        <Route
+          //✅장바구니
+          path="/basket"
+          element={
+            <>
+              <div>장바구니</div>
+            </>
+          }
+        />
+      </Routes>
     </div>
   );
 }
