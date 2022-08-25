@@ -9,8 +9,8 @@ function Detail() {
           <img src={nuts1} />
         </div>
         <div className="col-md-6">
-          <h4 className="pt-5">상품명</h4>
-          <p>상품설명</p>
+          <h4 className="pt-5">아몬드</h4>
+          <p>볶은 아몬드</p>
           <p>12000원</p>
           <button className="btn btn-danger">주문하기</button>
         </div>
