@@ -62,13 +62,6 @@ function App() {
               ></div>
               <div className="container">
                 <div className="row">
-                  {/* Card 컴포넌트 활용법 */}
-                  {/* 
-              <Card nuts={nuts[0]} i={1} />
-              <Card nuts={nuts[1]} i={2} />
-              <Card nuts={nuts[2]} i={3} />
-               */}
-
                   {/* map 반복문쓰기 */}
                   {nuts.map((a, i) => {
                     return <Card nuts={nuts[i]} i={i}></Card>;
@@ -81,8 +74,10 @@ function App() {
 
         <Route
           //✅상세페이지 = 상품페이지
-          path="/detail"
-          element={<Detail />}
+          //파라미터
+          path="/detail/:id"
+          element={<Detail nuts={nuts} />} //data 불러오기위해서 nuts={nuts}
+          //Detail.js 로 이동해서 props 적용
         />
 
         <Route
