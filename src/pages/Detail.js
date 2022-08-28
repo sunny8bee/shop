@@ -1,15 +1,39 @@
 // import nutsImg from "/Users/sungyumi/Desktop/리액트배우는중/shop/src/img/nuts";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+// //구버전 컴포넌트 만들기  : Lifecycle
+// class Detail2 extends React.Component {
+//   componentDidMount() {}
+//   componentDidMount() {}
+//   componentDidMount() {}              }
+
+//요즘버전 컴포넌트 만들기 : Hook (useEffect함수)
 function Detail(props) {
-  let { id } = useParams();
-  let findProduct = props.nuts.find(function (x) {
-    return x.id == id;
+  useEffect(() => {
+    //mount(생성), update(재렌더링) 시 여기 코드 실행됨.
+    console.log("요즘버전 useEffect Hook");
   });
+
+  let { id } = useParams();
+  let findProduct = props.nuts.find(x => x.id == id);
+  //(function (x) {
+  //   return x.id == id;
+  // });
+
+  //mount, update시 코드 실행해주는 useEffect
+  let [count, setCount] = useState(0); //리턴으로 가서 count - button
 
   return (
     <div className="container">
+      {count}
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        버튼
+      </button>
       <div className="row">
         <div className="col-md-6">
           {/* <img src={require("./img/nuts1")} alt="nuts1" width="100%" /> */}
