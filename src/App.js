@@ -5,9 +5,10 @@ import "./App.css";
 import data from "./data.js";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./pages/Detail.js";
+import axios from "axios";
 
 function App() {
-  let [nuts] = useState(data);
+  let [nuts, setNuts] = useState(data);
 
   // 페이지 이동을 도와주는 함수 훅
   let navigate = useNavigate();
@@ -68,6 +69,23 @@ function App() {
                   })}
                 </div>
               </div>
+
+              {/* 버튼만들어서 axios연결 */}
+              <button
+                onClick={() => {
+                  axios
+                    .get("https://codingapple1.github.io/shop/data2.json")
+                    .then(result => {
+                      setNuts([...nuts, ...result.data]);
+                    })
+                    //ajax요청 실패할 경우 ? (예외처리)
+                    .catch(() => {
+                      console.log("request failed");
+                    });
+                }}
+              >
+                more
+              </button>
             </>
           }
         />
