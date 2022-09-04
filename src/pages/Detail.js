@@ -13,17 +13,17 @@ function Detail(props) {
   let { id } = useParams();
   let findProduct = props.nuts.find(x => x.id == id);
 
-  //📍UI가 보이게 또는 안보이게 상태 저장 state
-  // const [alert, setAlert] = useState(true);
-  // useEffect(() => {
-  //   //📍타이머 만들기 : 2초 후 alert창이 안보이게하기
-  //   setTimeout(() => {
-  //     setAlert(false);
-  //   }, 2000);
-  // }, []);
+  //  📍UI가 보이게 또는 안보이게 상태 저장 state
+  const [alert, setAlert] = useState(true);
+  useEffect(() => {
+    //📍타이머 만들기 : 2초 후 alert창이 안보이게하기
+    setTimeout(() => {
+      setAlert(false);
+    }, 2000);
+  }, []);
 
   //mount, update시 코드 실행해주는 useEffect
-  let [count, setCount] = useState(0); //리턴으로 가서 count - button
+  //let [count, setCount] = useState(0); //리턴으로 가서 count - button
 
   // // 유저가 숫자말고 다른걸 입력하면 alert창 띄우기 선언
   let [num, setNum] = useState("");
@@ -52,7 +52,7 @@ function Detail(props) {
         <div className="alert alert-warning">2초 이내 구매 시 할인</div>
       ) : null}
 
-      {/* 📍카운트 버튼 만들기 */}
+      {/* 📍카운트 버튼 만들기
       {count}
       <button
         onClick={() => {
@@ -60,7 +60,7 @@ function Detail(props) {
         }}
       >
         버튼
-      </button>
+      </button> */}
       <div className="row">
         <div className="col-md-6">
           <img
