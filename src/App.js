@@ -5,6 +5,7 @@ import "./App.css";
 import data from "./data.js";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./pages/Detail.js";
+import Cart from "./pages/Cart.js";
 import axios from "axios";
 
 function App() {
@@ -135,11 +136,7 @@ function App() {
         <Route
           //✅장바구니
           path="/cart"
-          element={
-            <>
-              <div>장바구니</div>
-            </>
-          }
+          element={<Cart />}
         />
 
         {/* 📌404 페이지 만들기  */}
